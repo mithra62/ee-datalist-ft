@@ -12,15 +12,22 @@ class Datalist_ft extends OptionFieldtype
         'version'   => '0.0.1',
     ];
 
+    /**
+     * @var null
+     */
+    protected $field = null;
+
+    /**
+     * @return string
+     */
     public function display_global_settings()
     {
-        $val = array_merge($this->settings, $_POST);
-
-        $form = '';
-
-        return $form;
+        return '';
     }
 
+    /**
+     * @return array|mixed
+     */
     public function save_global_settings()
     {
         return array_merge($this->settings, $_POST);
@@ -48,36 +55,34 @@ class Datalist_ft extends OptionFieldtype
         ];
     }
 
+    /**
+     * @param $data
+     * @return string
+     */
     public function display_field($data)
     {
-        $defaults = ['list' => '__'.$this->field_name, 'name' => $this->field_name, 'value' => $data];
-        $input = "<input " . _parse_form_attributes($defaults, []) . " />";
         $options = $this->_get_field_options($data);
-        if(is_array($options)) {
-            $input .= '<datalist id="__'.$this->field_name.'">';
-            foreach($options AS $key => $value) {
-                $input .= '<option value="'.$key.'">';
-            }
-            $input .= '</datalist>';
-        }
-
-        return $input;
+        return ee('datalist:FieldService')->generate($this->field_name, $data, $options);
     }
 
+    /**
+     * @param $data
+     * @return string
+     */
     public function grid_display_field($data)
     {
         return $this->display_field($data);
     }
 
+    /**
+     * @param $data
+     * @param array $params
+     * @param false $tagdata
+     * @return string
+     */
     public function replace_tag($data, $params = [], $tagdata = false)
     {
-        return 'Magic!';
-    }
-
-    function form_datalist($name = '', $options = [], $selected = [], $extra = '', $form_prep = true)
-    {
-        $defaults = ['list' => '__'.$name, 'name' => $name, 'value' => $selected];
-        $input = "<input " . _parse_form_attributes($defaults) . $extra . " />";
+        return $data;
     }
 
     /**
