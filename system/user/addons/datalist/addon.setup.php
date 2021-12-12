@@ -14,5 +14,10 @@ return [
             'compatibility' => '',
         ],
     ],
+    'seeder' => [
+        'fields' => [
+            'datalist' => Mithra62\DataList\Fields\DataList::class,
+        ],
+    ]
     // Advanced settings
 ];
