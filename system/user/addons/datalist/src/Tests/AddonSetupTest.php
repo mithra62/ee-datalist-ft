@@ -117,7 +117,7 @@ class AddonSetupTest extends TestCase
     {
         $seeder = $addon->get('seeder');
         $this->assertTrue(!empty($seeder['fields']['datalist']));
-        $this->assertEquals('Mithra62\DataList\Fields\DataList', $seeder['fields']['datalist']);
+        $this->assertEquals('Mithra62\DataList\Fields\DataList\Seeder', $seeder['fields']['datalist']);
         return $addon;
     }
 }
