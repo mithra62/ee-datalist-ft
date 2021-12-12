@@ -1,25 +1,16 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 require_once SYSPATH . 'ee/legacy/fieldtypes/OptionFieldtype.php';
-if (! defined('BASEPATH')) {
-    exit('No direct script access allowed');
-}
 
 class Datalist_ft extends OptionFieldtype
 {
-    public $has_array_data = true;
-
-    public $size = 'small';
-
-    public $info = array(
+    /**
+     * @var string[]
+     */
+    public $info = [
         'name'      => 'DataList',
         'version'   => '0.0.1',
-    );
-
-    public function install()
-    {
-        return [];
-    }
+    ];
 
     public function display_global_settings()
     {
@@ -35,34 +26,42 @@ class Datalist_ft extends OptionFieldtype
         return array_merge($this->settings, $_POST);
     }
 
+    /**
+     * Sets up the Settings for the specific Field implementation
+     * @param $data
+     * @return array[]
+     */
     public function display_settings($data)
     {
         $settings = $this->getSettingsForm(
             'datalist',
             $data,
-            'select_options',
-            lang('options_field_desc') . lang('select_options_desc')
+            'datalist_options',
+            lang('options_field_desc') . lang('datalist_options_desc')
         );
 
-        return array('field_options_datalist' => array(
-            'label' => 'field_options',
-            'group' => 'datalist',
-            'settings' => $settings
-        ));
-    }
-
-    public function save_settings($data)
-    {
-        return [];
+        return ['field_options_datalist' => [
+                'label' => 'field_options',
+                'group' => 'datalist',
+                'settings' => $settings
+            ]
+        ];
     }
 
     public function display_field($data)
     {
-        return form_input(array(
-            'name'  => $this->field_name,
-            'id'    => $this->field_id,
-            'value' => $data
-        ));
+        $defaults = ['list' => '__'.$this->field_name, 'name' => $this->field_name, 'value' => $data];
+        $input = "<input " . _parse_form_attributes($defaults, []) . " />";
+        $options = $this->_get_field_options($data);
+        if(is_array($options)) {
+            $input .= '<datalist id="__'.$this->field_name.'">';
+            foreach($options AS $key => $value) {
+                $input .= '<option value="'.$key.'">';
+            }
+            $input .= '</datalist>';
+        }
+
+        return $input;
     }
 
     public function grid_display_field($data)
@@ -70,14 +69,14 @@ class Datalist_ft extends OptionFieldtype
         return $this->display_field($data);
     }
 
-    public function replace_tag($data, $params = array(), $tagdata = false)
+    public function replace_tag($data, $params = [], $tagdata = false)
     {
         return 'Magic!';
     }
 
-    function form_datalist($name = '', $options = array(), $selected = array(), $extra = '', $form_prep = true)
+    function form_datalist($name = '', $options = [], $selected = [], $extra = '', $form_prep = true)
     {
-        $defaults = array('list' => '__'.$name, 'name' => $name, 'value' => $selected);
+        $defaults = ['list' => '__'.$name, 'name' => $name, 'value' => $selected];
         $input = "<input " . _parse_form_attributes($defaults) . $extra . " />";
     }
 
