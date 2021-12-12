@@ -1,5 +1,9 @@
 <?php
 
+if (defined('PATH_THIRD')) {
+    require_once PATH_THIRD . 'datalist/vendor/autoload.php';
+}
+
 return [
     'author'            => 'mithra62',
     'author_url'        => '',
@@ -9,7 +13,7 @@ return [
     'namespace'         => 'Mithra62\DataList',
     'settings_exist'    => false,
     'fieldtypes'        => [
-        'datalistft' => [
+        'datalist' => [
             'name' => 'DataList',
             'compatibility' => '',
         ],
