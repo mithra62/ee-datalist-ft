@@ -15,7 +15,7 @@ return [
     'fieldtypes'        => [
         'datalist' => [
             'name' => 'DataList',
-            'compatibility' => '',
+            'compatibility' => 'list',
         ],
     ],
     'seeder' => [
