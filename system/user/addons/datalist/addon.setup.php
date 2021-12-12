@@ -18,6 +18,9 @@ return [
         'fields' => [
             'datalist' => Mithra62\DataList\Fields\DataList::class,
         ],
+    ],
+    'tests' => [
+        'path' => 'src/Tests',
     ]
     // Advanced settings
 ];
