@@ -33,5 +33,4 @@ return [
     'tests' => [
         'path' => 'src/Tests',
     ]
-    // Advanced settings
 ];

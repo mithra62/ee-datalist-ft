@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-require_once SYSPATH . 'ee/legacy/fieldtypes/OptionFieldtype.php';
+if(!class_exists('OptionFieldtype')) {
+    require_once SYSPATH . 'ee/legacy/fieldtypes/OptionFieldtype.php';
+}
 
 class Datalist_ft extends OptionFieldtype
 {
@@ -11,11 +13,6 @@ class Datalist_ft extends OptionFieldtype
         'name'      => 'DataList',
         'version'   => '0.0.1',
     ];
-
-    /**
-     * @var null
-     */
-    protected $field = null;
 
     /**
      * @return string
@@ -72,17 +69,6 @@ class Datalist_ft extends OptionFieldtype
     public function grid_display_field($data)
     {
         return $this->display_field($data);
-    }
-
-    /**
-     * @param $data
-     * @param array $params
-     * @param false $tagdata
-     * @return string
-     */
-    public function replace_tag($data, $params = [], $tagdata = false)
-    {
-        return $data;
     }
 
     /**
