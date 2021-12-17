@@ -13,6 +13,8 @@ class Seeder extends AbstractField
      */
     public function fakieData(\Faker\Generator $faker, AbstractSeed $seed)
     {
-        return 'fdsa';
+        print_r($this->randomOptionValues());
+        exit;
+        return $this->randomOptionValues();
     }
 }

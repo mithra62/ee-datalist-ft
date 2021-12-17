@@ -114,7 +114,7 @@ class Field
         if($this->getOptions()) {
             $input .= '<datalist id="'.$this->getListName().'">';
             foreach($this->getOptions() AS $key => $value) {
-                $input .= '<option value="'.$key.'">';
+                $input .= '<option value="'.$key.'">'.$value.'</option>';
             }
             $input .= '</datalist>';
         }
