@@ -49,10 +49,10 @@ class Field
     }
 
     /**
-     * @param $options
+     * @param arrau $options
      * @return $this
      */
-    public function setOptions($options)
+    public function setOptions(array $options)
     {
         $this->options = $options;
         return $this;
@@ -61,7 +61,7 @@ class Field
     /**
      * @return array
      */
-    public function getOptions()
+    public function getOptions(): array
     {
         return $this->options;
     }
@@ -102,7 +102,7 @@ class Field
      */
     public function getInputField()
     {
-        return "<input type='text' " . _parse_form_attributes($this->getInputParams(), []) . " />";
+        return "<input type='text' " . \_parse_form_attributes($this->getInputParams(), []) . " />";
     }
 
     /**
