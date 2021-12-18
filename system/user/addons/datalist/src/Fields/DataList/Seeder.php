@@ -13,8 +13,7 @@ class Seeder extends AbstractField
      */
     public function fakieData(\Faker\Generator $faker, AbstractSeed $seed)
     {
-        print_r($this->randomOptionValues());
-        exit;
-        return $this->randomOptionValues();
+        $values = $this->randomOptionValues();
+        return end($values);
     }
 }
