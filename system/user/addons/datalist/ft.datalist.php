@@ -37,6 +37,7 @@ class Datalist_ft extends OptionFieldtype
      */
     public function display_settings($data)
     {
+        ee()->lang->loadfile('datalist');
         $settings = $this->getSettingsForm(
             'datalist',
             $data,
