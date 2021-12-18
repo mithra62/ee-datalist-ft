@@ -73,6 +73,25 @@ class Datalist_ft extends OptionFieldtype
     }
 
     /**
+     * field:label modifier
+     * @param $data
+     * @param array $params
+     * @param false $tagdata
+     * @return string
+     */
+    public function replace_label($data, $params = array(), $tagdata = false)
+    {
+        $pairs = $this->get_setting('value_label_pairs');
+        if (isset($pairs[$data])) {
+            $data = $pairs[$data];
+        }
+
+        $data = $this->processTypograpghy($data);
+
+        return $this->replace_tag($data, $params, $tagdata);
+    }
+
+    /**
      * Accept all content types.
      *
      * @param string  The name of the content type
