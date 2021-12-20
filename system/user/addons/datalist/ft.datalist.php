@@ -3,8 +3,9 @@
 if(!class_exists('OptionFieldtype')) {
     require_once SYSPATH . 'ee/legacy/fieldtypes/OptionFieldtype.php';
 }
+use ExpressionEngine\Library\CP\EntryManager\ColumnInterface;
 
-class Datalist_ft extends OptionFieldtype
+class Datalist_ft extends OptionFieldtype implements ColumnInterface
 {
     /**
      * @var string[]
