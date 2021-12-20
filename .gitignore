@@ -1,1 +1,10 @@
 /system/user/addons/datalist/composer.phar
+/system/user/addons/datalist/vendor
+/system/user/addons/datalist/composer.lock
+/system/user/addons/datalist/src/Tests/logs/testdox.xml
+/system/user/addons/datalist/src/Tests/logs/testdox.txt
+/system/user/addons/datalist/src/Tests/logs/testdox.html
+/system/user/addons/datalist/src/Tests/logs/teamcity.txt
+/system/user/addons/datalist/src/Tests/logs/logfile.txt
+/system/user/addons/datalist/src/Tests/logs/junit.xml
+/system/user/addons/datalist/src/Tests/.phpunit.result.cache
