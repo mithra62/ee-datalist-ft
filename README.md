@@ -1,6 +1,6 @@
 # Datalist FieldType for ExpressionEngine 
 
-The Dataist FieldType allows you to add `datalist` input fields into your ExpressionEngine Channel Entries. It's based off the [<\datalist\>: The HTML Data List element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) spec and should comply with everything laid out there.
+The Dataist FieldType allows you to add `datalist` input fields into your ExpressionEngine Channel Entries. It's based off the [<datalist\>: The HTML Data List element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) spec and should comply with everything laid out there.
 
 ## Details
 Will output an HTML input field for Channel Entries that resemble:
