@@ -6,7 +6,7 @@ The Dataist FieldType allows you to add `datalist` input fields into your Expres
 Will output an HTML input field for Channel Entries that resemble:
 
 ```html
-<input list="__my_list" type='text' id="custom-field-name" value="5" />
+<input list="__my_list" type='text' name="my_list" id="my_list" value="5" />
 <datalist id=__my_list">
     <option value="1">One</value>
     <option value="2">Two</value>
@@ -21,10 +21,9 @@ Will output an HTML input field for Channel Entries that resemble:
 The Datalist FieldType should work with:
 
 - [Grid FieldType](https://docs.expressionengine.com/latest/fieldtypes/grid.html "Grid FieldType")
-- Matrix FieldType
 - [Fluid FieldType](https://docs.expressionengine.com/latest/fieldtypes/fluid.html "Fluid FieldType")
 - [Seeder by CartThrob](https://expressionengine.com/add-ons/seeder-by-cartthrob "Seeder By CartThrob")
-- Unit Tests
+- [Unit Tests](https://github.com/mithra62/ee-unit-tests "Unit Tests")
 
 ### Modifiers
 
