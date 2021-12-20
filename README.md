@@ -8,11 +8,11 @@ Will output an HTML input field for Channel Entries that resemble:
 ```html
 <input list="__my_list" type='text' id="custom-field-name" value="5" />
 <datalist id=__my_list">
-<option value="1">One</value>
-<option value="2">Two</value>
-<option value="3">Three</value>
-<option value="4">Four</value>
-<option value="5">Five</value>
+    <option value="1">One</value>
+    <option value="2">Two</value>
+    <option value="3">Three</value>
+    <option value="4">Four</value>
+    <option value="5">Five</value>
 </datalist>
 ```
 
