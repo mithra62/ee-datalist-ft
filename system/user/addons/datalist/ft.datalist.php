@@ -73,6 +73,20 @@ class Datalist_ft extends OptionFieldtype
     }
 
     /**
+     * @param $data
+     * @return array|array[][]
+     */
+    public function grid_display_settings($data)
+    {
+        return $this->getGridSettingsForm(
+            'datalist',
+            $data,
+            'datalist_options',
+            'grid_datalist_options_desc'
+        );
+    }
+
+    /**
      * field:label modifier
      * @param $data
      * @param array $params
