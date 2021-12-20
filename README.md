@@ -31,6 +31,11 @@ The Datalist FieldType should work with:
 #### :label
 Will output the label instead of the value for the field.
 
+##### Example
+```html
+{my_field_name:label}
+```
+
 ### License
 
 I don't care. 
