@@ -11,7 +11,7 @@ return [
     'author_url'        => '',
     'name'              => 'DataList',
     'description'       => 'Allows for a datalist FieldType ',
-    'version'           => '0.0.1',
+    'version'           => '1.0.0',
     'namespace'         => 'Mithra62\DataList',
     'settings_exist'    => false,
     'services' => [
