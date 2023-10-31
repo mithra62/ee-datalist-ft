@@ -12,7 +12,7 @@ class Datalist_ft extends OptionFieldtype implements ColumnInterface
      */
     public $info = [
         'name'      => 'DataList',
-        'version'   => '1.0.0',
+        'version'   => DATALIST_FIELDTYPE_VERSION,
     ];
 
     /**

@@ -2,12 +2,14 @@
 
 use Mithra62\DataList\Services\Field AS FieldService;
 
+const DATALIST_FIELDTYPE_VERSION = '1.0.2';
+
 return [
     'author'            => 'mithra62',
     'author_url'        => '',
     'name'              => 'DataList',
     'description'       => 'Allows for a datalist FieldType ',
-    'version'           => '1.0.0',
+    'version'           => DATALIST_FIELDTYPE_VERSION,
     'namespace'         => 'Mithra62\DataList',
     'settings_exist'    => false,
     'services' => [
