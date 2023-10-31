@@ -10,6 +10,7 @@ class DataListFieldTest extends TestCase
     {
         $file_name = realpath(PATH_THIRD.'/datalist/ft.datalist.php');
         $this->assertNotNull($file_name);
+        include_once $file_name;
     }
 
     public function testFtObjetExists()

@@ -1,9 +1,5 @@
 <?php
 
-if (defined('PATH_THIRD')) {
-    require_once PATH_THIRD . 'datalist/vendor/autoload.php';
-}
-
 use Mithra62\DataList\Services\Field AS FieldService;
 
 return [
@@ -31,6 +27,6 @@ return [
         ],
     ],
     'tests' => [
-        'path' => 'src/Tests',
+        'path' => 'Tests',
     ]
 ];
