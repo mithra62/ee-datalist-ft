@@ -1,8 +1,9 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-if(!class_exists('OptionFieldtype')) {
+if (!class_exists('OptionFieldtype')) {
     require_once SYSPATH . 'ee/legacy/fieldtypes/OptionFieldtype.php';
 }
+
 use ExpressionEngine\Library\CP\EntryManager\ColumnInterface;
 
 class Datalist_ft extends OptionFieldtype implements ColumnInterface
@@ -11,8 +12,8 @@ class Datalist_ft extends OptionFieldtype implements ColumnInterface
      * @var string[]
      */
     public $info = [
-        'name'      => 'DataList',
-        'version'   => DATALIST_FIELDTYPE_VERSION,
+        'name' => 'DataList',
+        'version' => DATALIST_FIELDTYPE_VERSION,
     ];
 
     /**
@@ -47,10 +48,10 @@ class Datalist_ft extends OptionFieldtype implements ColumnInterface
         );
 
         return ['field_options_datalist' => [
-                'label' => 'field_options',
-                'group' => 'datalist',
-                'settings' => $settings
-            ]
+            'label' => 'field_options',
+            'group' => 'datalist',
+            'settings' => $settings,
+        ],
         ];
     }
 
@@ -94,7 +95,7 @@ class Datalist_ft extends OptionFieldtype implements ColumnInterface
      * @param false $tagdata
      * @return string
      */
-    public function replace_label($data, $params = array(), $tagdata = false)
+    public function replace_label($data, $params = [], $tagdata = false)
     {
         $pairs = $this->get_setting('value_label_pairs');
         if (isset($pairs[$data])) {

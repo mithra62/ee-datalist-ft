@@ -1,4 +1,5 @@
 <?php
+
 namespace Mithra62\DataList\Fields\DataList;
 
 use CartThrob\Seeder\Core\AbstractSeed;

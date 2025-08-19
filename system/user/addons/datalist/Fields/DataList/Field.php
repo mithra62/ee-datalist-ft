@@ -1,4 +1,5 @@
 <?php
+
 namespace Mithra62\DataList\Fields\DataList;
 
 class Field
@@ -45,7 +46,7 @@ class Field
      */
     public function getListName()
     {
-        return '__'.$this->getName();
+        return '__' . $this->getName();
     }
 
     /**
@@ -93,7 +94,7 @@ class Field
             'list' => $this->getListName(),
             'name' => $this->getName(),
             'id' => $this->getName(),
-            'value' => $this->getValue()
+            'value' => $this->getValue(),
         ];
     }
 
@@ -111,10 +112,10 @@ class Field
     public function getDataListOptions()
     {
         $input = '';
-        if($this->getOptions()) {
-            $input .= '<datalist id="'.$this->getListName().'">';
-            foreach($this->getOptions() AS $key => $value) {
-                $input .= '<option value="'.$key.'">'.$value.'</option>';
+        if ($this->getOptions()) {
+            $input .= '<datalist id="' . $this->getListName() . '">';
+            foreach ($this->getOptions() as $key => $value) {
+                $input .= '<option value="' . $key . '">' . $value . '</option>';
             }
             $input .= '</datalist>';
         }
@@ -127,6 +128,6 @@ class Field
      */
     public function generate()
     {
-        return $this->getInputField().$this->getDataListOptions();
+        return $this->getInputField() . $this->getDataListOptions();
     }
 }
