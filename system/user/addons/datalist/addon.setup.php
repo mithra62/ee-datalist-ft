@@ -21,6 +21,9 @@ return [
         'datalist' => [
             'name' => 'DataList',
             'compatibility' => 'list',
+            'use' => array(
+                'MemberField'
+            )
         ],
     ],
     'seeder' => [
