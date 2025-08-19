@@ -1,7 +1,8 @@
 <?php
+
 namespace Mithra62\DataList\Services;
 
-use Mithra62\DataList\Fields\DataList\Field AS DataListField;
+use Mithra62\DataList\Fields\DataList\Field as DataListField;
 
 class Field
 {
@@ -16,8 +17,8 @@ class Field
     {
         $field = new DataListField();
         return $field->setOptions($options)
-                    ->setValue($value)
-                    ->setName($name)
-                    ->generate();
+            ->setValue($value)
+            ->setName($name)
+            ->generate();
     }
 }

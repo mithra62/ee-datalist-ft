@@ -1,29 +1,29 @@
 <?php
 
-use Mithra62\DataList\Services\Field AS FieldService;
+use Mithra62\DataList\Services\Field as FieldService;
 
-const DATALIST_FIELDTYPE_VERSION = '1.0.2';
+const DATALIST_FIELDTYPE_VERSION = '1.1.0';
 
 return [
-    'author'            => 'mithra62',
-    'author_url'        => '',
-    'name'              => 'DataList',
-    'description'       => 'Allows for a datalist FieldType ',
-    'version'           => DATALIST_FIELDTYPE_VERSION,
-    'namespace'         => 'Mithra62\DataList',
-    'settings_exist'    => false,
+    'author' => 'mithra62',
+    'author_url' => '',
+    'name' => 'DataList',
+    'description' => 'Allows for a datalist FieldType ',
+    'version' => DATALIST_FIELDTYPE_VERSION,
+    'namespace' => 'Mithra62\DataList',
+    'settings_exist' => false,
     'services' => [
         'FieldService' => function ($addon) {
             return new FieldService();
         },
     ],
-    'fieldtypes'        => [
+    'fieldtypes' => [
         'datalist' => [
             'name' => 'DataList',
             'compatibility' => 'list',
-            'use' => array(
-                'MemberField'
-            )
+            'use' => [
+                'MemberField',
+            ],
         ],
     ],
     'seeder' => [
@@ -33,5 +33,5 @@ return [
     ],
     'tests' => [
         'path' => 'Tests',
-    ]
+    ],
 ];
